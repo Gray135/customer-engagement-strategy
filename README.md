@@ -1,77 +1,114 @@
-# 📊 Customer Engagement Strategy (Excel Logic Engine)
+# Customer Engagement Strategy — Excel Project
 
-This project simulates a real-world **Customer Success Operations workflow** that transforms customer risk signals and behavioral patterns into automated strategy assignments using only Excel.
+## Overview
 
-It delivers **Next Best Actions (NBA)** and **CSM Strategy Codes** based on layered logic, match keys, and behavioral inputs — all without any code or third-party platforms.
+This project simulates how a Customer Success Operations Analyst might analyze customer engagement data and generate **Next Best Action** recommendations to help drive continued engagement and retention.
 
----
+I built this project in Excel to deepen my understanding of **engagement strategy logic** and how tools like Gainsight structure decision models. My goal was to mimic part of a CS Ops workflow — from data cleaning to segmentation to action recommendations — using only Excel.
 
-##  Business Value Delivered
+## Business Goal
 
-| Value | Description |
-|-------|-------------|
-| Customer Insights | Segments accounts based on risk, engagement level, email status, and tenure |
-| Strategic Automation | Assigns CSM strategies based on logic-driven inputs, reducing manual review |
-| Churn Risk Targeting | Flags at-risk customers for re-engagement or escalation |
-| Operational Efficiency | Mimics the prioritization logic used by modern CS teams |
-| Portfolio-Ready Logic | Demonstrates real-world segmentation, lookup structures, and Excel modeling under constraint |
+Simulate an internal customer engagement model that could help a Customer Success Operations or CS Ops team:
 
----
+- Identify at-risk customers  
+- Segment customers by tenure, risk level, and engagement score  
+- Recommend appropriate actions based on customer traits  
+- Support a **Next Best Action** framework to guide team interventions  
 
-## Files Included
+## Data & Cleaning
 
-| File | Description |
-|------|-------------|
-| `Customer Engagement Strategy.xlsx` | Final workbook with match keys, logic matrix, and strategy output |
-| `README.md` | This file — full project overview |
+I worked with a simulated customer dataset that included:
 
----
+- Customer demographic and account traits  
+- Satisfaction scores  
+- Conversion rates across channels  
+- Loyalty and repeat purchase indicators  
 
-## Project Overview
+Cleaning steps included:
 
-Each customer record is evaluated based on four behavioral dimensions:
+- Normalizing Yes/No flags  
+- Grouping tenure into **Established, Loyal, New** categories  
+- Converting numeric columns for consistency  
+- Building calculated columns for **risk level** and **engagement status**  
 
-- **Risk Response** (e.g. At Risk, Escalate, Monitor)
-- **Engagement Action** (e.g. Re-Engage, Maintain, Nurture)
-- **Email Strategy** (e.g. Re-Engage Email, Maintain Email)
-- **Tenure Signal** (e.g. Loyal, Unknown, Established)
+## Next Best Action Logic
 
-These are combined into a **Match Key**, such as:  
-`AT RISK | RE-ENGAGE | MAINTAIN EMAIL | LOYAL`
+To simulate Gainsight-style logic, I built two levels of recommendations:
 
-This key is used to look up the appropriate:
-- **CSM Code** (e.g. Escalate, Maintain, Monitor)
-- **Strategy Notes** or actions based on engagement tier
+### Level 1 — Next Best Action Table
 
----
+- Based on **tenure group**, **risk level**, and **satisfaction score**  
+- Determines whether to **Monitor**, **Maintain**, **Re-engage**, or **Escalate**  
 
-## How It Works
+### Level 2 — Strategy Matrix
 
-1. **Input Columns:** Risk, Engagement, Email Strategy, Tenure  
-2. **Match Key Generator:** Combines the four variables into a unique lookup key  
-3. **Logic Matrix:** Maps each key to a CSM Code and Suggested Action  
-4. **Next Best Action Engine:** Uses `XLOOKUP` to assign strategies at scale  
+- Combines Level 1 recommendations with **email strategy** and **tenure signals**  
+- Generates a final suggested action per customer  
+- Uses a reference matrix to map combinations of key traits to actionable outcomes  
 
-All logic was built manually using Excel functions like `XLOOKUP`, `INDEX`, `MATCH`, `TRIM`, and `TEXTJOIN`, along with error handling and match validation.
+Excel logic used:
 
----
+- `IF` and `XLOOKUP` functions  
+- **Concatenated match key** built from 4 customer attributes  
+- Lookup against a reference matrix to assign the correct strategy  
+
+## Key Skills Demonstrated
+
+- Excel formulas for complex decision logic  
+- Customer segmentation techniques  
+- Simulating CS Ops workflows in Excel  
+- Building structured **Next Best Action** models  
+- Mimicking Gainsight logic in Excel for learning purposes  
+
+## Sample Outputs
+
+### Cleaned Customer Data Preview
+![Cleaned Customer Data](images/cleaned_customer_data.png)
+
+### Next Best Action Level 2 Logic Table
+![Next Best Action Level 2](images/next_best_action_lv2.png)
+
+### Customer Engagement Strategy Matrix
+![Customer Engagement Strategy Matrix](images/engagement_strategy_matrix.png)
+
+## Why I Built This Project
+
+I am actively building toward a career in **Customer Success Operations**.  
+As part of that learning path, I wanted to:
+
+- Better understand **how CS Ops teams use engagement data**  
+- Practice structuring action recommendations from raw data  
+- Deepen my Excel formula fluency for CS Ops use cases  
+- Simulate a **real-world internal process** I might support in a CS Ops role  
+
+## Next Steps
+
+- Expand logic to cover additional signals (support ticket volume, product usage trends)  
+- Explore building a version in **Power BI** to support visualization and scaling  
+- Compare Excel-based model to functionality in actual **Gainsight** instance  
+
+## Tools Used
+
+- Microsoft Excel  
+- Data cleaning and transformation  
+- `XLOOKUP`, `IF` logic  
+- Concatenated match key logic for strategy mapping  
 
 ## What This Project Demonstrates
 
-This isn’t just an Excel workbook — it’s a simulation of how **Customer Success Operations teams** make structured, repeatable decisions.
+This isn’t just an Excel workbook — it’s a simulation of how Customer Success Operations teams make structured, repeatable decisions.
 
 By completing this, it demonstrates:
-- The ability to turn customer data into **actionable prioritization logic**
-- Comfort thinking in **rules, segments, and behavioral triggers**
-- Experience building a tool that reflects **real CS workflows**
-- The capacity to troubleshoot, refactor, and complete an operational system using limited tools
+
+- The ability to turn customer data into actionable prioritization logic  
+- Comfort thinking in **rules, segments, and behavioral triggers**  
+- Experience building a tool that reflects **real CS workflows**  
+- The capacity to troubleshoot, refactor, and complete an operational system using limited tools  
 
 It reflects the kind of thinking required in **CX Analyst, Customer Operations, or CS Ops roles** — where you aren't just analyzing, you're building systems that guide decisions.
 
----
-
 ## Contact
 
-- **Name:** Aaron Zeug  
-- **LinkedIn:** [linkedin.com/in/aaronzeug](https://www.linkedin.com/in/aaronzeug)  
-- **GitHub:** [github.com/aaronzeug](https://github.com/aaronzeug)
+**Name:** Aaron Zeug  
+**LinkedIn:** [linkedin.com/in/aaronzeug](https://linkedin.com/in/aaronzeug)  
+**GitHub:** [github.com/aaronzeug](https://github.com/aaronzeug)
