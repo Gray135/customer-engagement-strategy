@@ -111,4 +111,4 @@ It reflects the kind of thinking required in **CX Analyst, Customer Operations, 
 
 **Name:** Aaron Zeug  
 **LinkedIn:** [linkedin.com/in/aaronzeug](https://linkedin.com/in/aaronzeug)  
-**GitHub:** [github.com/aaronzeug](https://github.com/aaronzeug)
+**GitHub:** [github.com/aaronzeug](https://github.com/Gray135)
