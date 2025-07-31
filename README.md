@@ -1,11 +1,27 @@
 # Customer Engagement Strategy — Excel Project
 
+Simulating a real-world CS Ops decision model using Excel — from data cleaning to engagement strategy.
+
+---
 ## Overview
 
-This project simulates how a Customer Success Operations Analyst might analyze customer engagement data and generate **Next Best Action** recommendations to help drive continued engagement and retention.
+This Excel-based project simulates how a Customer Success Operations Analyst might structure customer engagement data into a repeatable decision-making model.
+I plan to expand this logic into SQL and Power BI to scale the insights and compare tooling approaches.
 
 I built this project in Excel to deepen my understanding of **engagement strategy logic** and how tools like Gainsight structure decision models. My goal was to mimic part of a CS Ops workflow — from data cleaning to segmentation to action recommendations — using only Excel.
 
+---
+
+## Who Should View This Project
+
+This project is relevant for:
+
+- Hiring managers evaluating CX Analyst or CS Ops candidates
+- Recruiters seeking Excel-based workflow experience
+- Teams who still rely on logic-driven decision tools in the absence of full automation or predictive models
+
+---
+  
 ## Business Goal
 
 Simulate an internal customer engagement model that could help a Customer Success Operations or CS Ops team:
@@ -14,6 +30,8 @@ Simulate an internal customer engagement model that could help a Customer Succes
 - Segment customers by tenure, risk level, and engagement score  
 - Recommend appropriate actions based on customer traits  
 - Support a **Next Best Action** framework to guide team interventions  
+
+---
 
 ## Data & Cleaning
 
@@ -29,7 +47,9 @@ Cleaning steps included:
 - Normalizing Yes/No flags  
 - Grouping tenure into **Established, Loyal, New** categories  
 - Converting numeric columns for consistency  
-- Building calculated columns for **risk level** and **engagement status**  
+- Building calculated columns for **risk level** and **engagement status**
+
+---
 
 ## Next Best Action Logic
 
@@ -50,7 +70,9 @@ Excel logic used:
 
 - `IF` and `XLOOKUP` functions  
 - **Concatenated match key** built from 4 customer attributes  
-- Lookup against a reference matrix to assign the correct strategy  
+- Lookup against a reference matrix to assign the correct strategy
+
+---
 
 ## Key Skills Demonstrated
 
@@ -58,7 +80,9 @@ Excel logic used:
 - Customer segmentation techniques  
 - Simulating CS Ops workflows in Excel  
 - Building structured **Next Best Action** models  
-- Mimicking Gainsight logic in Excel for learning purposes  
+- Mimicking Gainsight logic in Excel for learning purposes
+
+---
 
 ## Sample Outputs
 
@@ -71,10 +95,13 @@ Excel logic used:
 ### Customer Engagement Strategy Matrix
 ![Customer Engagement Strategy Matrix](images/engagement_strategy_matrix.png)
 
+---
+
 ## Why I Built This Project
 
-I am actively building toward a career in **Customer Success Operations**.  
-As part of that learning path, I wanted to:
+I’m actively building toward a career in Customer Success Operations, where understanding engagement signals and acting on them is critical to retention. This project gave me hands-on practice structuring decisions from raw data, simulating how CS Ops teams use tools like Gainsight.
+
+Through this project, I aimed to:
 
 - Better understand **how CS Ops teams use engagement data**  
 - Practice structuring action recommendations from raw data  
@@ -92,12 +119,13 @@ As part of that learning path, I wanted to:
 - Microsoft Excel  
 - Data cleaning and transformation  
 - `XLOOKUP`, `IF` logic  
-- Concatenated match key logic for strategy mapping  
+- Built a 4-column match key to map customer traits to strategy outcomes
 
-## What This Project Demonstrates
+---
 
-This isn’t just an Excel workbook — it’s a simulation of how Customer Success Operations teams make structured, repeatable decisions.
+## Role Alignment & Takeaways
 
+This reflects how CS Ops teams use data to guide customer engagement strategies when predictive tools aren't available.
 By completing this, it demonstrates:
 
 - The ability to turn customer data into actionable prioritization logic  
@@ -107,8 +135,11 @@ By completing this, it demonstrates:
 
 It reflects the kind of thinking required in **CX Analyst, Customer Operations, or CS Ops roles** — where you aren't just analyzing, you're building systems that guide decisions.
 
+---
+
 ## Contact
 
 **Name:** Aaron Zeug  
-**LinkedIn:** [linkedin.com/in/aaronzeug](https://linkedin.com/in/aaronzeug)  
-**GitHub:** [github.com/aaronzeug](https://github.com/Gray135)
+- Based in Minnesota — Open to remote or hybrid roles  
+- [LinkedIn](https://linkedin.com/in/aaronzeug)  
+- [GitHub](https://github.com/Gray135)
