@@ -5,7 +5,7 @@ Simulating a real-world CS Ops decision model using Excel — from data cleaning
 ---
 ## Overview
 
-This Excel-based project simulates how a Customer Success Operations Analyst might structure customer engagement data into a repeatable decision-making model.
+This Excel-based learning project simulates how a Customer Success Operations Analyst might structure customer engagement data into a repeatable decision-making model.
 I plan to expand this logic into SQL and Power BI to scale the insights and compare tooling approaches.
 
 I built this project in Excel to deepen my understanding of **engagement strategy logic** and how tools like Gainsight structure decision models. My goal was to mimic part of a CS Ops workflow — from data cleaning to segmentation to action recommendations — using only Excel.
