@@ -1,4 +1,4 @@
-# Customer Engagement Strategy — Excel Project
+# Customer Engagement Strategy — Excel Learning Project
 
 Simulating a real-world CS Ops decision model using Excel — from data cleaning to engagement strategy.
 
