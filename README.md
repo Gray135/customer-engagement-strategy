@@ -91,6 +91,9 @@ This project uses a simulated customer dataset with:
 
 To simulate Gainsight-style logic, I built two levels of recommendations:
 
+### SQL View
+![SQL View of Data Set](images/sql/vw_engagement_for_bi.png)
+
 ### Next Best Action Logic
 
 **Level 1 — Next Best Action Table**  
