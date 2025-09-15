@@ -1,25 +1,22 @@
-# Customer Engagement Strategy — Excel Project
+# Customer Engagement Strategy
 
-Simulating a real-world CS Ops decision model using Excel — from data cleaning to engagement strategy.
-
----
-## Overview
-
-This Excel-based project simulates how a Customer Success Operations Analyst might structure customer engagement data into a repeatable decision-making model.
-I plan to expand this logic into SQL and Power BI to scale the insights and compare tooling approaches.
-
-I built this project in Excel to deepen my understanding of **engagement strategy logic** and how tools like Gainsight structure decision models. My goal was to mimic part of a CS Ops workflow — from data cleaning to segmentation to action recommendations — using only Excel.
+Simulating a real-world CS Ops decision model using Excel: from data cleaning to engagement strategy.
 
 ---
+## Goal: 
 
-## Who Should View This Project
+Simulate a real-world Customer Success Operations (CS Ops) decision model that flags at-risk customers, segments by engagement level, and recommends next actions.
 
-This project is relevant for:
+This project started in Excel using formulas and match keys, then expanded into SQL views to make the model scalable and BI-ready. It reflects how CS Ops teams use structured logic (similar to Gainsight) to guide retention and engagement strategies.
 
-- Hiring managers evaluating CX Analyst or CS Ops candidates
-- Recruiters seeking Excel-based workflow experience
-- Teams who still rely on logic-driven decision tools in the absence of full automation or predictive models
+---
 
+## Business Problem
+
+Customer Success teams often need to decide:
+- Which customers are **at risk**?  
+- How should we **prioritize outreach**?  
+- What is the **next best action** for each customer?  
 ---
   
 ## Business Goal
@@ -33,58 +30,55 @@ Simulate an internal customer engagement model that could help a Customer Succes
 
 ---
 
-## Data & Cleaning
 
-I worked with a simulated customer dataset that included:
+## Solution Approach
 
-- Customer demographic and account traits  
-- Satisfaction scores  
-- Conversion rates across channels  
-- Loyalty and repeat purchase indicators  
+**Excel Prototype:**
 
-Cleaning steps included:
+- Built logic-driven model with XLOOKUP, INDEX/MATCH, IF functions.
+- Created Next Best Action (NBA) tables based on tenure, risk, and satisfaction.
+- Developed a strategy matrix mapping customer traits to recommended actions.
 
-- Normalizing Yes/No flags  
-- Grouping tenure into **Established, Loyal, New** categories  
-- Converting numeric columns for consistency  
-- Building calculated columns for **risk level** and **engagement status**
+**SQL Refactor (in progress):**
 
+- Migrated Excel logic into SQL views (vw_engagement_for_bi, supporting demographic and purchase history views).
+- Restructured dataset for scalability and BI integration.
+- Added validation queries to compare Excel vs. SQL outputs.
+
+## Data & Preparation 
+This project uses a simulated customer dataset with: 
+- Demographics and account traits
+- Satisfaction scores
+- Conversion rates across channels
+- Loyalty and repeat purchase indicators
+- Service interaction history (calls, chats, escalations) 
+
+### Cleaning & Transformation 
+**Excel (initial prototype):**
+- Normalized Yes/No flags
+- Grouped tenure into categories (**New, Established, Loyal**)
+- Converted numeric columns for consistency
+- Built calculated fields for **risk level** and **engagement status**
+
+**SQL (scalable refactor, in progress):**  
+- Began translating Excel logic into SQL views for demographics, purchase history, and service interactions  
+- Used joins and match keys (with guidance) to consolidate customer records  
+- Added null-handling defaults to prevent dropped customers  
+- Drafted an output view (`vw_engagement_for_bi`) designed to hold risk scores, risk buckets, next-best-action, and reason codes
 ---
-
-## Next Best Action Logic
-
-To simulate Gainsight-style logic, I built two levels of recommendations:
-
-### Level 1 — Next Best Action Table
-
-- Based on **tenure group**, **risk level**, and **satisfaction score**  
-- Determines whether to **Monitor**, **Maintain**, **Re-engage**, or **Escalate**  
-
-### Level 2 — Strategy Matrix
-
-- Combines Level 1 recommendations with **email strategy** and **tenure signals**  
-- Generates a final suggested action per customer  
-- Uses a reference matrix to map combinations of key traits to actionable outcomes  
-
-Excel logic used:
-
-- `IF` and `XLOOKUP` functions  
-- **Concatenated match key** built from 4 customer attributes  
-- Lookup against a reference matrix to assign the correct strategy
-
----
-
 ## Key Skills Demonstrated
 
-- Excel formulas for complex decision logic  
-- Customer segmentation techniques  
-- Simulating CS Ops workflows in Excel  
-- Building structured **Next Best Action** models  
-- Mimicking Gainsight logic in Excel for learning purposes
+- **Excel:** Data cleaning, advanced formulas, lookup logic.
+
+- **SQL**: View creation, joins, data preparation for BI.
+
+- **Ops Thinking:** SLA-style workload prioritization, at-risk flagging.
+
+- **Documentation:** Clear definitions, assumptions, and next steps.
 
 ---
-
 ## Sample Outputs
+
 
 ### Cleaned Customer Data Preview
 ![Cleaned Customer Data](images/cleaned_customer_data.png)
@@ -95,45 +89,79 @@ Excel logic used:
 ### Customer Engagement Strategy Matrix
 ![Customer Engagement Strategy Matrix](images/engagement_strategy_matrix.png)
 
+To simulate Gainsight-style logic, I built two levels of recommendations:
+
+### Next Best Action Logic
+
+**Level 1 — Next Best Action Table**  
+- Uses tenure group, risk level, and satisfaction score  
+- Recommends Monitor, Maintain, Re-engage, or Escalate  
+
+**Level 2 — Strategy Matrix**  
+- Combines Level 1 recommendations with email strategy + tenure signals  
+- Maps combinations of traits to a final suggested action via reference matrix  
+
+**Excel logic:**  
+- IF and XLOOKUP functions  
+- Concatenated 4-attribute match key  
+- Lookup against a reference matrix to assign strategy
+
+## SQL Logic (Refactor of Excel Model)
+
+To make the engagement model scalable, I began refactoring the Excel logic into SQL views.  
+The goal is to mirror the Excel calculations (risk flags, match keys, next-best-action logic) in a repeatable, queryable form and prepare a BI-ready dataset for future Power BI reporting.  
+This refactor is still in progress, but the structure below outlines the key views and logic already drafted.
+
+### Key Components
+- **Core Views**
+  - `vw_engagement_for_bi` → main BI-ready dataset (customer_id, risk_score, bucket, next_best_action, reasons).
+  - `vw_customer_demographics` → age, tenure, and account traits.
+  - `vw_purchase_history` → recency, frequency, and total purchase counts.
+  - `vw_service_interactions` → last contact, service issue counts, escalation flags.
+
+- **Logic Implemented**
+  - Risk scoring using tenure, purchase history, and service interactions.
+  - Concatenated match keys (customer attributes) for lookups against strategy matrix.
+  - SLA-style workload distribution fields for analyst reporting.
+  - Null handling defaults to prevent dropped customers.
+
+- **Validation Checks**
+  - Row counts, key coverage, and null checks.
+  - Spot-checked Excel vs SQL outputs to confirm parity with original logic.
+
+
 ---
-
-## Why I Built This Project
-
-I’m actively building toward a career in Customer Success Operations, where understanding engagement signals and acting on them is critical to retention. This project gave me hands-on practice structuring decisions from raw data, simulating how CS Ops teams use tools like Gainsight.
-
-Through this project, I aimed to:
-
-- Better understand **how CS Ops teams use engagement data**  
-- Practice structuring action recommendations from raw data  
-- Deepen my Excel formula fluency for CS Ops use cases  
-- Simulate a **real-world internal process** I might support in a CS Ops role  
 
 ## Next Steps
 
-- Expand logic to cover additional signals (support ticket volume, product usage trends)  
-- Explore building a version in **Power BI** to support visualization and scaling  
-- Compare Excel-based model to functionality in actual **Gainsight** instance  
+- Complete SQL validation and finalize BI-ready dataset.
+
+- Build a Power BI report to visualize engagement segments and workload distribution.
+
+- Compare Excel/SQL approach to Gainsight’s NBA functionality.
+
+## Why I Built This Project
+
+I built this project to practice structuring engagement data into a decision model, simulating how CS Ops teams use tools like Gainsight. It gave me hands-on experience turning raw data into action recommendations, while deepening my Excel fluency and preparing to scale the logic in SQL and Power BI.
 
 ## Tools Used
+- Excel: Data cleaning, XLOOKUP, IF, match keys.
 
-- Microsoft Excel  
-- Data cleaning and transformation  
-- `XLOOKUP`, `IF` logic  
-- Built a 4-column match key to map customer traits to strategy outcomes
+- SQL: Views for engagement scoring, segmentation, and action logic.
+
+- Power BI (planned): Future reporting layer.
 
 ---
 
 ## Role Alignment & Takeaways
 
-This reflects how CS Ops teams use data to guide customer engagement strategies when predictive tools aren't available.
-By completing this, it demonstrates:
+This project demonstrates how an analyst can:
 
-- The ability to turn customer data into actionable prioritization logic  
-- Comfort thinking in **rules, segments, and behavioral triggers**  
-- Experience building a tool that reflects **real CS workflows**  
-- The capacity to troubleshoot, refactor, and complete an operational system using limited tools  
+- Turn raw customer data into actionable insights.
 
-It reflects the kind of thinking required in **CX Analyst, Customer Operations, or CS Ops roles** — where you aren't just analyzing, you're building systems that guide decisions.
+- Structure repeatable decision logic for at-risk customers.
+
+- Support operations teams with both Excel-based tools and scalable SQL datasets.
 
 ---
 
