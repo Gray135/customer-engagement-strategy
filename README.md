@@ -15,10 +15,6 @@ This project highlights practical skills in **SQL view design, Power BI data mod
 
 ## Table of Contents
 - [Dashboard Preview](#dashboard-preview)
-  - [Customer Summary Dashboard](#1-customer-summary-dashboard)
-  - [Demographics & Retention Behavior](#2-demographics--retention-behavior)
-  - [Engagement & Escalation Risk](#3-engagement--escalation-risk)
-  - [Key Insights & Next Steps](#4-key-insights--next-steps)
 - [Business Objective](#business-objective)
 - [Key Insights](#key-insights)
 - [Data Source](#data-source)
@@ -26,11 +22,9 @@ This project highlights practical skills in **SQL view design, Power BI data mod
 - [Power BI Data Model](#power-bi-data-model)
 - [Real-World Role Alignment](#real-world-role-alignment)
 - [Next Steps](#next-steps)
-- [Folder Structure](#folder-structure)
 - [Reflection](#reflection)
 - [Contact](#contact)
 - [Disclaimer](#disclaimer)
-
 ---
 
 ## Dashboard Preview
@@ -55,50 +49,30 @@ It highlights how CLV, engagement score, satisfaction score, and escalation risk
 
 ---
 
-### 1. Customer Summary Dashboard
+### Report Pages
+
+1. Customer Summary Dashboard  
 ![Customer Summary Dashboard](images/Customer_Summary_Dashboard.png)
 
 
-**Focus:** High-level KPIs  
-**Highlights:** Total customers, premium share, average CLV, and satisfaction.  
-Also includes premium membership by tenure group, engagement by satisfaction band, and CLV tier distribution.  
-
-**Use Case:**  
-Gives leaders a quick view of the customer base — who they are, how engaged they are, and where most revenue comes from.
-
 ---
 
-### 2. Demographics & Retention Behavior
+2. Demographics & Retention Behavior
 ![Customer Demographics and Retention](images/Demographic_and_Retention.png)
 
-**Focus:** Segment Behavior  
-**Highlights:** Repeat vs new mix, CLV by income level, and customer count by country and gender.  
-Includes a summary table showing CLV buckets, engagement averages, repeat %, and satisfaction scores.  
-
-**Use Case:**  
-Identifies which segments are most loyal, which drive value, and where satisfaction doesn’t align with spend.
 
 ---
 
-### 3. Engagement & Escalation Risk
+3. Engagement & Escalation Risk
 ![Engagement and Risk](images/Engagement_and_Risk.png)
-**Focus:** Customer Health & Risk  
-**Highlights:** Engagement and satisfaction by CLV bucket and channel (email, mobile, social).  
-Shows escalation risk distribution across customer tiers.  
-
-**Use Case:**  
-Pinpoints where high-value customers are disengaged or at risk — guiding escalation and outreach priorities.
 
 
 ---
 
-### 4. Key Insights & Next Steps
+4. Key Insights & Next Steps
 ![Insights and Actions](images/Insights_and_Actions.png)
-**Focus:** Strategy & Next Steps  
-**Highlights:** Summarizes key findings (e.g., 96% of base in low CLV) and connects engagement, satisfaction, and CLV to actionable next steps.  
 
-**Use Case:**  
-Functions like an executive slide — concise takeaways and recommendations for retention and quarterly planning.
+
 
 ---
 
@@ -245,9 +219,9 @@ Turn this into a lightweight **CS Ops workload routing tool** that answers a sim
 ## Folder Structure
 
 - `excel/` – Early logic tables and “Next Best Action” mapping
-- `sql-views/` – SQL views and validation queries
+- `sql` – SQL views and validation queries
 - `images/` – Power BI dashboard screenshots used in this README
-- `dashboard/customer_engagement_strategy.pbix` – Power BI report file
+- `dashboard/` – Power BI report file
 - `README.md` – Project overview, visuals, insights, and next steps
 
 (Adjust folder names if yours differ. The structure above is the intention.)
