@@ -6,48 +6,26 @@
 - **Quick skim:** This README explains the business goal, visuals, and insights.
 
 ---
-
-# 💬 Customer Engagement Strategy
-
-## Using Excel, SQL, and Power BI to Simulate a Real-World CS Ops Decision Model
-
-This project simulates how a Customer Success Operations (CS Ops) or Customer Success team might use data to monitor customer health, flag at-risk accounts, and guide retention outreach.
-
-**Main goal:** build a working engagement model that connects Excel logic, SQL views, and a Power BI dashboard to answer:
-- Which customers are at risk?
-- What drives engagement and satisfaction?
-- Where should the team focus first?
-
-This is the first version that includes a Power BI reporting layer. The dashboard turns the Excel + SQL decision logic into interactive visuals that show:
-- Customer Lifetime Value (CLV) tiers
-- Engagement and satisfaction levels
-- Repeat vs new customer behavior
-- Escalation risk by segment
-
-This is meant to feel like a real CS Ops playbook: “Who do we worry about, and why?”
-
-**Tools & approach**
-- **Excel:** cleaned the raw data, built the first version of “Next Best Action” logic using IF / XLOOKUP / INDEX-MATCH
-- **SQL:** translated that logic into views so it can scale and feed BI
-- **Power BI:** built multi-page dashboards to surface retention risks and action paths
-
-**Dashboard pages**
-1. **Customer Summary** — CLV, premium mix, engagement by channel, satisfaction
-2. **Demographics & Retention** — gender, income, repeat rate, CLV distribution
-3. **Engagement & Escalation Risk** — satisfaction vs engagement and where risk sits
-4. **Key Insights & Next Steps** — what to do with this data
+## 🧭 1-Minute Summary
+Built a full-cycle **Customer Success Operations (CS Ops)** model using **Excel, SQL, and Power BI** to simulate how teams track engagement, identify at-risk customers, and plan retention outreach.  
+The dashboard combines CLV tiers, satisfaction scores, and escalation risk to show where attention is needed most — like a simplified Gainsight or Salesforce CS view.  
+This project highlights practical skills in **SQL view design, Power BI data modeling, DAX measures,** and turning CX data into business insights.
 
 ---
 
 ## Table of Contents
 - [Dashboard Preview](#dashboard-preview)
+  - [Customer Summary Dashboard](#1-customer-summary-dashboard)
+  - [Demographics & Retention Behavior](#2-demographics--retention-behavior)
+  - [Engagement & Escalation Risk](#3-engagement--escalation-risk)
+  - [Key Insights & Next Steps](#4-key-insights--next-steps)
 - [Business Objective](#business-objective)
-- [Key Insights From the Dashboard](#key-insights-from-the-dashboard)
-- [Next Steps](#next-steps)
+- [Key Insights](#key-insights)
 - [Data Source](#data-source)
 - [Data Preparation and Logic](#data-preparation-and-logic)
-- [SQL Views](#sql-views)
-- [Real World Role Alignment](#real-world-role-alignment)
+- [Power BI Data Model](#power-bi-data-model)
+- [Real-World Role Alignment](#real-world-role-alignment)
+- [Next Steps](#next-steps)
 - [Folder Structure](#folder-structure)
 - [Reflection](#reflection)
 - [Contact](#contact)
@@ -61,7 +39,7 @@ The dashboard connects Excel logic, SQL structuring, and Power BI visuals to sim
 
 It highlights how CLV, engagement score, satisfaction score, and escalation risk show up across different customer segments.
 
-### 🔑 Key Metrics
+### Key Metrics
 
 | **Metric**                    | **Value / Description**                          |
 |------------------------------|--------------------------------------------------|
@@ -80,208 +58,188 @@ It highlights how CLV, engagement score, satisfaction score, and escalation risk
 ### 1. Customer Summary Dashboard
 ![Customer Summary Dashboard](images/Customer_Summary_Dashboard.png)
 
-What it shows:
-- High-level KPIs (total customers, premium % share, average CLV, satisfaction)
-- Premium membership count by tenure group
-- Engagement by satisfaction band and CLV tier
-- Channel engagement (email, mobile, social)
-- CLV bucket volume
 
-How a CS Ops lead would use it:
-- “What does our customer base look like right now?”
-- “Which slice is big enough to actually matter?”
+**Focus:** High-level KPIs  
+**Highlights:** Total customers, premium share, average CLV, and satisfaction.  
+Also includes premium membership by tenure group, engagement by satisfaction band, and CLV tier distribution.  
+
+**Use Case:**  
+Gives leaders a quick view of the customer base — who they are, how engaged they are, and where most revenue comes from.
 
 ---
 
 ### 2. Demographics & Retention Behavior
 ![Customer Demographics and Retention](images/Demographic_and_Retention.png)
 
-What it shows:
-- % Female / % Male / % Unknown
-- Repeat vs new customer engagement
-- CLV by income level
-- Customer count by country
-- A table with all major metrics (CLV bucket, count, average engagement score, repeat %, satisfaction score, etc.)
+**Focus:** Segment Behavior  
+**Highlights:** Repeat vs new mix, CLV by income level, and customer count by country and gender.  
+Includes a summary table showing CLV buckets, engagement averages, repeat %, and satisfaction scores.  
 
-How a CS Ops lead would use it:
-- “Where are we strong with repeat buyers?”
-- “Does higher CLV line up with higher satisfaction or just higher spend?”
-- “Which income bands are actually driving value?”
+**Use Case:**  
+Identifies which segments are most loyal, which drive value, and where satisfaction doesn’t align with spend.
 
 ---
 
 ### 3. Engagement & Escalation Risk
 ![Engagement and Risk](images/Engagement_and_Risk.png)
+**Focus:** Customer Health & Risk  
+**Highlights:** Engagement and satisfaction by CLV bucket and channel (email, mobile, social).  
+Shows escalation risk distribution across customer tiers.  
 
-What it shows:
-- Avg engagement score by CLV bucket
-- Avg satisfaction score by CLV bucket
-- Engagement by channel (email, mobile, social) across CLV tiers
-- Escalation risk split across CLV buckets (Low / Medium / High)
+**Use Case:**  
+Pinpoints where high-value customers are disengaged or at risk — guiding escalation and outreach priorities.
 
-How a CS Ops / Support Ops lead would use it:
-- “Are high-value customers actually engaged, or are they quietly unhappy?”
-- “Where do we see higher escalation risk, and is it concentrated in a revenue-critical segment?”
 
 ---
 
 ### 4. Key Insights & Next Steps
 ![Insights and Actions](images/Insights_and_Actions.png)
+**Focus:** Strategy & Next Steps  
+**Highlights:** Summarizes key findings (e.g., 96% of base in low CLV) and connects engagement, satisfaction, and CLV to actionable next steps.  
 
-What it shows:
-- A summary of what matters (ex: “0–2k CLV makes up ~96% of customers → core retention focus”)
-- A summary of what to do next (cross-sell low-CLV repeaters, re-engage high-value tiers that stopped engaging, etc.)
-- Supporting visuals (engagement score by CLV tier, satisfaction score by CLV tier)
-
-This page basically acts like the slide you’d send to leadership.
+**Use Case:**  
+Functions like an executive slide — concise takeaways and recommendations for retention and quarterly planning.
 
 ---
 
 ## Business Objective
 
-Customer Success / CS Ops teams need a way to answer:
-- Who is at risk?
-- Who should we contact first?
-- Are we losing high-value customers because they’re disengaging, or are we mostly dealing with low-value noise?
+Customer Success and Operations teams need to know:
+- Who’s most at risk of churning?
+- What’s driving engagement and satisfaction?
+- Where should outreach and resources go first?
 
-The goal of this project is to simulate that workflow:
-1. Flag at-risk customers
-2. Segment them by CLV, engagement score, and satisfaction
-3. Recommend a “next best action” style response
+This project simulates that workflow using structured logic across **Excel → SQL → Power BI**, mirroring how CS Ops teams use platforms like Gainsight or Salesforce to manage account health and retention.
 
-This is built to feel like the early version of something you’d run in Gainsight or a CS Ops health dashboard.
+**Goal:**  
+Create a full-cycle model that:
+1. Flags at-risk customers  
+2. Segments them by CLV, engagement, and satisfaction  
+3. Recommends a data-driven “next best action” for retention and outreach  
 
----
-
-## Key Insights From the Dashboard
-
-These are examples of what you’d hand to stakeholders:
-
-- **Most of the base is low CLV.** ~96% of customers fall in the $0–2k CLV bucket. That group basically *is* the business. Retention work has to start here or it doesn’t scale.
-- **High-CLV ($20k+) customers show lower engagement.** That’s a red flag. They’re valuable but less active. Reactivation work needs to be targeted, fast, and probably personal.
-- **Repeat rate is high (84%).** Strong signal for loyalty. This is not a “one and done” customer base.
-- **Income Index ~1.9.** The majority of spend is coming from mid-income tiers, not ultra-high income. Meaning: don’t build a strategy that assumes luxury buyer behavior.
-- **Channel engagement is not equal.** Some segments engage mostly by mobile or email. That matters for outreach planning (who you email vs who you have to call or escalate).
-
-These findings are surfaced visually in the Power BI pages, and they link back to the Excel / SQL logic for “risk” and “next best action.”
+The result is a practical, BI-ready framework that blends Excel business logic with scalable SQL views and Power BI visuals — the kind of workflow a real CS Ops or VoC Analyst would use to prioritize high-impact accounts.
 
 ---
 
-## Next Steps
+## Key Insights
 
-Where this project is going next:
-- Add time-based metrics (trend over time instead of just a snapshot)
-- Automate the data refresh instead of manually exporting to Power BI
-- Add a light churn-risk score that blends:
-  - engagement score
-  - satisfaction score
-  - escalation risk
-  - CLV tier
-- Tighten parity between:
-  - Excel “Next Best Action” logic (Level 1 / Level 2)
-  - SQL views feeding Power BI
+| **Insight** | **What It Means** |
+|--------------|------------------|
+| **96% of customers** fall in the low-CLV ($0–2k) range | The retention backbone — focus here for scalable impact |
+| **High-CLV customers** show **lower engagement** | Warning sign for targeted reactivation campaigns |
+| **Repeat rate (84%)** | Indicates strong loyalty base to maintain and expand |
+| **Income Index (~1.9)** | Spending skews mid-tier, not luxury — outreach tone matters |
+| **Channel engagement varies** | Different segments prefer email, mobile, or social — personalize contact strategy |
 
-Long-term idea:
-- Treat this as the backbone for a workload routing model (“who do we work today and why?”).
+These insights connect directly to the dashboard visuals, where each page highlights how engagement, satisfaction, and CLV interact to shape retention priorities.
 
 ---
 
 ## Data Source
 
-All data here is simulated.
 
-The dataset is structured to look like what a CS Ops or CX analytics team might have access to:
-- Customer demographics (gender, income level, tenure group)
-- CLV and order value
-- Engagement score and satisfaction score
-- Premium membership flag
-- Repeat vs new status
-- Escalation risk level
+All data in this project is **simulated** and designed to reflect what a real Customer Success or CX Analytics team might work with.
+
+The dataset structure mirrors typical operational fields used for retention and engagement analysis:
+
+- Customer demographics (gender, income level, country, tenure group)  
+- Customer Lifetime Value (CLV) and total order value  
+- Engagement and satisfaction scores  
+- Premium membership and repeat status  
+- Escalation risk level and support interaction history  
 - Channel engagement (email, mobile, social)
 
-No real customer data is used.
+No real customer information is used — this dataset is for **demonstration and portfolio purposes only.**
 
 ---
 
 ## Data Preparation and Logic
 
 ### Excel (prototype stage)
-- Cleaned Yes/No flags and normalized numeric columns
-- Grouped tenure into categories (New, Established, Loyal, etc.)
-- Built “Next Best Action” logic:
-  - Level 1 = basic recommendation (Monitor / Maintain / Re-engage / Escalate)
-  - Level 2 = strategy matrix that combines tenure, risk, satisfaction, etc.
-- Used `IF`, `XLOOKUP`, `INDEX/MATCH`, and concatenated match keys to assign actions
+
+Started in Excel (`Data for Updated Project.xlsx`) to shape the base dataset before scaling in SQL and Power BI.
+
+- Combined core attributes (ID, tenure, income, premium status, repeat flag, etc.)
+- Added calculated fields for satisfaction, engagement, and escalation risk
+- Grouped customers into CLV tiers ($0–2k, $2k–5k, $5k–20k, $20k+)
+- Created quick filters like premium member, repeat customer, and negative CLV
+
+This file served as a prototype — a quick way to clean data, test segmentation ideas, and validate logic before moving everything into SQL for automation.
 
 ### SQL (scaling the logic)
-- Built SQL views to mirror the Excel logic in a more repeatable way:
-  - `vw_engagement_for_bi` → main BI-ready view with CLV, engagement, satisfaction, risk, next_best_action, reasons
-  - `vw_customer_demographics` → tenure, income level, gender
-  - `vw_purchase_history` → order volume, repeat vs new
-  - `vw_service_interactions` → escalation flags, last contact
-- Added null-handling defaults so customers don’t drop out of the view
-- Started validating Excel output vs SQL output (row counts, coverage, etc.)
 
-### Power BI (visual layer)
-- Modeled the dataset in Power BI
-- Created measures for:
-  - Premium member %
-  - Repeat customer %
-  - Avg CLV
-  - Avg engagement score
-  - Avg satisfaction score
-- Built four report pages to surface retention and risk patterns in a way that would make sense to operations leadership
+After validating the cleaned dataset in Excel, I rebuilt the logic in SQL to make it scalable and BI-ready.
 
----
+**Key views:**
+- `vw_core_profile` – Customer attributes such as ID, registration date, tenure, demographics, income, and membership status  
+- `vw_customer_value` – Purchasing behavior including total purchases, average order value, lifetime value, CLV bucket, and return flags  
+- `vw_customer_satisfaction` – Experience metrics like average satisfaction score and escalation risk  
+- `vw_engagement_for_bi` – Consolidated, BI-ready view combining CLV, engagement, satisfaction, and risk indicators
 
-## SQL Views
+**Highlights:**
+- Implemented null handling and default values to prevent customer records from dropping out of analysis  
+- Validated SQL outputs against the Excel prototype to confirm row counts and data consistency before loading into Power BI
 
-These are the core building blocks behind the dashboard:
+### Power BI Data Model
 
-- `vw_engagement_for_bi`
-  - Customer ID
-  - CLV and CLV bucket
-  - Engagement score / Satisfaction score
-  - Escalation risk
-  - Next best action / reason
+With the SQL views finalized, the data was modeled in **Power BI** using a clear, scalable star schema designed for accuracy and easy maintenance.
 
-- `vw_customer_demographics`
-  - Gender
-  - Income level
-  - Tenure group
-  - Country / region
+**Model Overview**
+- **Fact Tables:**  
+  `F_public_customer_value`, `F_public_customer_engagement`, `F_public_customer_satisfaction`, `F_public_core_profile`  
+- **Dimension Table:**  
+  `DimCustomer` — central customer key controlling all relationships and filters  
+- **Measures Table:**  
+  Dedicated layer for all DAX calculations to keep metrics standardized across reports  
 
-- `vw_purchase_history`
-  - Total order value
-  - Repeat flag
-  - Recency / frequency signals
+**Core DAX Measures**
+- Average Customer Lifetime Value (CLV)  
+- Average Engagement Score  
+- Average Satisfaction Score  
+- % Repeat Customers  
+- % Premium Members  
+- Escalation Risk by CLV Tier and Engagement Level  
 
-- `vw_service_interactions`
-  - Tickets / escalations
-  - Last touch channel
-  - Risk notes
+**Dashboard Pages**
+1. **Customer Summary** – high-level KPIs and engagement by satisfaction  
+2. **Demographics & Retention** – repeat rates, CLV distribution, and customer mix  
+3. **Engagement & Escalation Risk** – engagement vs. satisfaction, risk by CLV tier  
+4. **Insights & Actions** – key findings and strategic recommendations  
 
-These are meant to simulate how data teams prepare a clean, BI-ready view for Customer Success or Support Ops.
+This Power BI model translates the Excel and SQL logic into an interactive, executive-level view of customer health and retention risk — similar to what a CS Ops or CX team would use in Gainsight or Salesforce.
 
 ---
 
 ## Real World Role Alignment
 
-This project mirrors typical work for:
-- Customer Success Operations / CS Ops Analyst
-- Customer Experience (CX) / Voice of Customer Analyst
-- Business Analyst supporting Retention / Loyalty
-- Support Operations Analyst (escalation + health monitoring)
+This project reflects the kind of work done by:
+- **Customer Success Operations (CS Ops) Analysts**
+- **Customer Experience / Voice of Customer Analysts**
+- **Business Analysts focused on Retention or Loyalty**
+- **Support Operations Analysts** monitoring escalation and account health
 
-Skills shown here:
-- Data cleaning and prep in Excel
-- Translating manual logic into SQL views
-- Building a BI model in Power BI
-- Turning raw metrics into outreach strategy, not just charts
+**Skills demonstrated:**
+- Data cleaning and segmentation in Excel  
+- Translating manual logic into scalable SQL views  
+- Power BI data modeling with DAX for real-time metrics  
+- Turning operational data into actionable insights for customer retention  
 
-This is the exact type of work you’d be expected to explain in an interview:
-“How do you know who to focus on first, and why?”
+This is the type of end-to-end workflow you’d discuss in an interview — moving from raw data to a repeatable model that helps answer:  
+> “Which customers need attention first, and why?”
 
+---
+## Next Steps
+
+The next iteration of this project will focus on making the model smarter and more automated.
+
+- Add **trend tracking** to show how engagement and satisfaction change over time  
+- Automate **data refresh** so Power BI always reflects the latest inputs  
+- Introduce a **light churn-risk score** that blends satisfaction, engagement, escalation, and CLV  
+- Tighten alignment between the **Excel prototype** and **SQL views** for better consistency  
+
+**Vision:**  
+Turn this into a lightweight **CS Ops workload routing tool** that answers a simple but powerful question:  
+> “Which customers need attention right now, and why?”
 ---
 
 ## Folder Structure
@@ -298,15 +256,12 @@ This is the exact type of work you’d be expected to explain in an interview:
 
 ## Reflection
 
-This project helped me practice something that’s hard to show on a resume:
-- Going from messy inputs → structured logic → scalable views → dashboard
-- Thinking like CS Ops, not just “make a chart”
-- Explaining “who do we contact and why” using data instead of gut feeling
+This project was about building something real — not just another demo dashboard.  
+I started with messy customer data, cleaned and organized it in Excel, moved the logic into SQL so it could scale, and finished with a Power BI dashboard that helps make sense of customer health and engagement.  
 
-I’m using this project to build confidence with:
-- Power BI data modeling and DAX
-- Writing SQL views that match business logic
-- Translating CX / CS Ops concepts into something a leadership team could actually use
+It pushed me to connect the technical work to actual business value — figuring out what metrics matter, how to structure the data, and how to show it in a way that drives action.  
+
+More than anything, it made me think like a CS Ops analyst: turning data into decisions, not just charts.
 
 ---
 
