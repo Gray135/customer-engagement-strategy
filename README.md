@@ -1,11 +1,12 @@
 # How to Read this Repo
-- **Start here:** Scroll to the [Dashboard Preview](#dashboard-preview) to see the Power BI visuals.
-- **[Excel prototype](excel/):** Early exploration of customer engagement patterns and the “Next Best Action” framework, illustrated through screenshots.
-- **[SQL views](sql/):** Scalable data preparation layer for BI, built to mirror Excel logic and feed Power BI.
-- **[Access the Dashboard](dashboard/customer_engagement_dashboard.pbix):** click the file in GitHub, then click "Raw" to download
+- **Start here:** Scroll to the [Dashboard Preview](#dashboard-preview) to see the Power BI visuals.  
+- **[Excel prototype](excel/):** Early exploration of customer engagement patterns and the “Next Best Action” framework.  
+- **[SQL views](sql/):** Scalable data preparation layer for BI, built to mirror Excel logic and feed Power BI.  
+- **[Access the Dashboard](dashboard/customer_engagement_dashboard.pbix):** Click the file in GitHub, then select **“Raw”** to download.  
 - **Quick skim:** This README explains the business goal, visuals, and insights.
 
 ---
+
 ## 🧭 1-Minute Summary
 Built a full-cycle **Customer Success Operations (CS Ops)** model using **Excel, SQL, and Power BI** to simulate how teams track engagement, identify at-risk customers, and plan retention outreach.  
 The dashboard combines CLV tiers, satisfaction scores, and escalation risk to show where attention is needed most — like a simplified Gainsight or Salesforce CS view.  
@@ -25,54 +26,56 @@ This project highlights practical skills in **SQL view design, Power BI data mod
 - [Reflection](#reflection)
 - [Contact](#contact)
 - [Disclaimer](#disclaimer)
+
 ---
 
 ## Dashboard Preview
 
-The dashboard connects Excel logic, SQL structuring, and Power BI visuals to simulate how a CS Ops / retention team might prioritize outreach.
-
-It highlights how CLV, engagement score, satisfaction score, and escalation risk show up across different customer segments.
+The dashboard connects Excel logic, SQL structuring, and Power BI visuals to simulate how a CS Ops or retention team might prioritize outreach.  
+It highlights how CLV, engagement, satisfaction, and escalation risk interact across customer segments.
 
 ### Key Metrics
 
-| **Metric**                    | **Value / Description**                          |
-|------------------------------|--------------------------------------------------|
-| Total Customers              | 4,327                                            |
-| Premium Members              | ~19% of total base                               |
-| Avg CLV                      | $592.85                                          |
-| Avg Satisfaction Score       | 6.63 / 10                                        |
-| Repeat Customer Rate         | 84%                                              |
-| Top Segment by Volume        | $0–2k CLV (95.7% of all customers)               |
-| Avg Income Index             | ~1.89 (skews mid-income / not luxury)            |
+| **Metric** | **Value / Description** |
+|-------------|--------------------------|
+| Total Customers | 4,327 |
+| Premium Members | ~19% of total base |
+| Avg CLV | $592.85 |
+| Avg Satisfaction Score | 6.63 / 10 |
+| Repeat Customer Rate | 84% |
+| Top Segment by Volume | $0–2k CLV (95.7% of all customers) |
+| Avg Income Index | ~1.89 (skews mid-income, not luxury) |
 
-> These metrics come from simulated customer data and are used to model retention strategy, not to report on any real business.
+> These metrics come from simulated customer data and are used to model retention strategy, not report on any real business.
 
 ---
 
 ### Report Pages
 
-1. Customer Summary Dashboard  
-![Customer Summary Dashboard](images/Customer_Summary_Dashboard.png)
-
-
----
-
-2. Demographics & Retention Behavior
-![Customer Demographics and Retention](images/Demographic_and_Retention.png)
-
+#### 1. Customer Summary Dashboard  
+![Customer Summary Dashboard](images/Customer_Summary_Dashboard.png)  
+High-level KPIs showing total customers, premium share, average CLV, and satisfaction.  
+Also includes premium membership by tenure group, engagement by satisfaction band, and CLV tier distribution.
 
 ---
 
-3. Engagement & Escalation Risk
-![Engagement and Risk](images/Engagement_and_Risk.png)
-
+#### 2. Demographics & Retention Behavior  
+![Customer Demographics and Retention](images/Demographic_and_Retention.png)  
+Shows repeat vs. new mix, CLV by income level, and customer count by country and gender.  
+Includes a summary table showing CLV buckets, engagement averages, repeat %, and satisfaction scores.
 
 ---
 
-4. Key Insights & Next Steps
-![Insights and Actions](images/Insights_and_Actions.png)
+#### 3. Engagement & Escalation Risk  
+![Engagement and Risk](images/Engagement_and_Risk.png)  
+Displays engagement and satisfaction by CLV bucket and channel (email, mobile, social).  
+Visualizes escalation risk distribution across customer tiers.
 
+---
 
+#### 4. Key Insights & Next Steps  
+![Insights and Actions](images/Insights_and_Actions.png)  
+Summarizes key findings (e.g., 96% of base in low CLV) and connects engagement, satisfaction, and CLV to actionable next steps — a concise, leadership-level view.
 
 ---
 
@@ -83,7 +86,7 @@ Customer Success and Operations teams need to know:
 - What’s driving engagement and satisfaction?
 - Where should outreach and resources go first?
 
-This project simulates that workflow using structured logic across **Excel → SQL → Power BI**, mirroring how CS Ops teams use platforms like Gainsight or Salesforce to manage account health and retention.
+This project simulates that workflow using **Excel → SQL → Power BI**, mirroring how CS Ops teams use tools like Gainsight or Salesforce to manage account health and retention.
 
 **Goal:**  
 Create a full-cycle model that:
@@ -91,7 +94,7 @@ Create a full-cycle model that:
 2. Segments them by CLV, engagement, and satisfaction  
 3. Recommends a data-driven “next best action” for retention and outreach  
 
-The result is a practical, BI-ready framework that blends Excel business logic with scalable SQL views and Power BI visuals — the kind of workflow a real CS Ops or VoC Analyst would use to prioritize high-impact accounts.
+The result is a BI-ready framework blending Excel business logic, scalable SQL views, and Power BI visuals — the same kind of workflow used by CS Ops or VoC Analysts to prioritize high-impact accounts.
 
 ---
 
@@ -99,143 +102,125 @@ The result is a practical, BI-ready framework that blends Excel business logic w
 
 | **Insight** | **What It Means** |
 |--------------|------------------|
-| **96% of customers** fall in the low-CLV ($0–2k) range | The retention backbone — focus here for scalable impact |
-| **High-CLV customers** show **lower engagement** | Warning sign for targeted reactivation campaigns |
-| **Repeat rate (84%)** | Indicates strong loyalty base to maintain and expand |
-| **Income Index (~1.9)** | Spending skews mid-tier, not luxury — outreach tone matters |
-| **Channel engagement varies** | Different segments prefer email, mobile, or social — personalize contact strategy |
+| 96% of customers fall in the low-CLV ($0–2k) range | The retention backbone — focus here for scalable impact |
+| High-CLV customers show lower engagement | Warning sign for targeted reactivation campaigns |
+| Repeat rate (84%) | Indicates strong loyalty base to maintain and expand |
+| Income Index (~1.9) | Spending skews mid-tier, not luxury — outreach tone matters |
+| Channel engagement varies | Different segments prefer email, mobile, or social — personalize contact strategy |
 
-These insights connect directly to the dashboard visuals, where each page highlights how engagement, satisfaction, and CLV interact to shape retention priorities.
+These insights link directly to the dashboard visuals, showing how engagement, satisfaction, and CLV shape retention priorities.
 
 ---
 
 ## Data Source
 
+All data is **simulated**, structured to reflect what a real CS Ops or CX Analytics team might manage.
 
-All data in this project is **simulated** and designed to reflect what a real Customer Success or CX Analytics team might work with.
-
-The dataset structure mirrors typical operational fields used for retention and engagement analysis:
-
-- Customer demographics (gender, income level, country, tenure group)  
+- Customer demographics (gender, income, country, tenure)  
 - Customer Lifetime Value (CLV) and total order value  
 - Engagement and satisfaction scores  
 - Premium membership and repeat status  
-- Escalation risk level and support interaction history  
-- Channel engagement (email, mobile, social)
+- Escalation risk and support interaction history  
+- Channel engagement (email, mobile, social)  
 
-No real customer information is used — this dataset is for **demonstration and portfolio purposes only.**
+No real customer information is used — this dataset is purely for demonstration and portfolio purposes.
 
 ---
 
 ## Data Preparation and Logic
 
-### Excel (prototype stage)
+### Excel (Prototype Stage)
+Initial data cleaning and logic testing began in **Excel** (`Data for Updated Project.xlsx`).  
+The goal was to validate segmentation and ensure fields aligned before scaling in SQL.
 
-Started in Excel (`Data for Updated Project.xlsx`) to shape the base dataset before scaling in SQL and Power BI.
+- Combined key fields (ID, tenure, income, premium, repeat flag, etc.)  
+- Calculated satisfaction, engagement, and escalation risk  
+- Grouped customers into CLV tiers ($0–2k, $2k–5k, $5k–20k, $20k+)  
+- Added status flags for premium members, repeaters, and negative CLV  
 
-- Combined core attributes (ID, tenure, income, premium status, repeat flag, etc.)
-- Added calculated fields for satisfaction, engagement, and escalation risk
-- Grouped customers into CLV tiers ($0–2k, $2k–5k, $5k–20k, $20k+)
-- Created quick filters like premium member, repeat customer, and negative CLV
+This served as the proof-of-concept layer — a fast way to confirm the segmentation logic worked before automating it.
 
-This file served as a prototype — a quick way to clean data, test segmentation ideas, and validate logic before moving everything into SQL for automation.
+### SQL (Scaling the Logic)
+Rebuilt the Excel logic into **SQL views** to make the data scalable and BI-ready.
 
-### SQL (scaling the logic)
+**Key Views**
+- `vw_core_profile` – Base attributes (ID, registration date, tenure, demographics, income, membership)  
+- `vw_customer_value` – Purchasing data (total purchases, avg order value, lifetime value, CLV bucket, returns)  
+- `vw_customer_satisfaction` – Experience data (average satisfaction score, escalation risk)  
+- `vw_engagement_for_bi` – Consolidated BI-ready view combining CLV, engagement, satisfaction, and risk  
 
-After validating the cleaned dataset in Excel, I rebuilt the logic in SQL to make it scalable and BI-ready.
+**Highlights**
+- Implemented null handling and default values to preserve record coverage  
+- Validated SQL output against Excel prototype for consistency before loading to Power BI  
 
-**Key views:**
-- `vw_core_profile` – Customer attributes such as ID, registration date, tenure, demographics, income, and membership status  
-- `vw_customer_value` – Purchasing behavior including total purchases, average order value, lifetime value, CLV bucket, and return flags  
-- `vw_customer_satisfaction` – Experience metrics like average satisfaction score and escalation risk  
-- `vw_engagement_for_bi` – Consolidated, BI-ready view combining CLV, engagement, satisfaction, and risk indicators
+---
 
-**Highlights:**
-- Implemented null handling and default values to prevent customer records from dropping out of analysis  
-- Validated SQL outputs against the Excel prototype to confirm row counts and data consistency before loading into Power BI
+## Power BI Data Model
 
-### Power BI Data Model
-
-With the SQL views finalized, the data was modeled in **Power BI** using a clear, scalable star schema designed for accuracy and easy maintenance.
+With SQL logic finalized, the data was modeled in **Power BI** using a star schema for maintainability and clarity.
 
 **Model Overview**
-- **Fact Tables:**  
-  `F_public_customer_value`, `F_public_customer_engagement`, `F_public_customer_satisfaction`, `F_public_core_profile`  
-- **Dimension Table:**  
-  `DimCustomer` — central customer key controlling all relationships and filters  
-- **Measures Table:**  
-  Dedicated layer for all DAX calculations to keep metrics standardized across reports  
+- **Fact Tables:** `F_public_customer_value`, `F_public_customer_engagement`, `F_public_customer_satisfaction`, `F_public_core_profile`  
+- **Dimension Table:** `DimCustomer` (central relationship control via customer_id)  
+- **Measures Table:** Centralized DAX calculations  
 
 **Core DAX Measures**
-- Average Customer Lifetime Value (CLV)  
+- Average CLV  
 - Average Engagement Score  
 - Average Satisfaction Score  
 - % Repeat Customers  
 - % Premium Members  
-- Escalation Risk by CLV Tier and Engagement Level  
+- Escalation Risk by CLV Tier and Engagement  
 
-**Dashboard Pages**
-1. **Customer Summary** – high-level KPIs and engagement by satisfaction  
-2. **Demographics & Retention** – repeat rates, CLV distribution, and customer mix  
-3. **Engagement & Escalation Risk** – engagement vs. satisfaction, risk by CLV tier  
-4. **Insights & Actions** – key findings and strategic recommendations  
-
-This Power BI model translates the Excel and SQL logic into an interactive, executive-level view of customer health and retention risk — similar to what a CS Ops or CX team would use in Gainsight or Salesforce.
+The model powers four report pages:
+1. Customer Summary  
+2. Demographics & Retention  
+3. Engagement & Escalation Risk  
+4. Insights & Actions  
 
 ---
 
-## Real World Role Alignment
+## Real-World Role Alignment
 
-This project reflects the kind of work done by:
-- **Customer Success Operations (CS Ops) Analysts**
-- **Customer Experience / Voice of Customer Analysts**
-- **Business Analysts focused on Retention or Loyalty**
-- **Support Operations Analysts** monitoring escalation and account health
+This project mirrors work done by:
+- Customer Success Operations Analysts  
+- CX / Voice of Customer Analysts  
+- Retention-focused Business Analysts  
+- Support Operations Analysts  
 
-**Skills demonstrated:**
-- Data cleaning and segmentation in Excel  
-- Translating manual logic into scalable SQL views  
-- Power BI data modeling with DAX for real-time metrics  
-- Turning operational data into actionable insights for customer retention  
+**Skills Demonstrated**
+- Data cleaning and segmentation (Excel)  
+- SQL logic design and BI view creation  
+- Power BI modeling and DAX  
+- Translating metrics into retention strategy  
 
-This is the type of end-to-end workflow you’d discuss in an interview — moving from raw data to a repeatable model that helps answer:  
-> “Which customers need attention first, and why?”
+An interviewer could ask, “How do you decide which customers to focus on first?” — this project is your practical answer.
 
 ---
+
 ## Next Steps
 
-The next iteration of this project will focus on making the model smarter and more automated.
-
-- Add **trend tracking** to show how engagement and satisfaction change over time  
-- Automate **data refresh** so Power BI always reflects the latest inputs  
-- Introduce a **light churn-risk score** that blends satisfaction, engagement, escalation, and CLV  
-- Tighten alignment between the **Excel prototype** and **SQL views** for better consistency  
+Future improvements planned:
+- Add **trend tracking** to visualize engagement over time  
+- Automate **Power BI refresh** for live data connections  
+- Add a **churn-risk score** combining satisfaction, engagement, escalation, and CLV  
+- Improve consistency between the Excel prototype and SQL logic  
 
 **Vision:**  
-Turn this into a lightweight **CS Ops workload routing tool** that answers a simple but powerful question:  
+Evolve this into a lightweight **CS Ops workload routing tool** that answers:  
 > “Which customers need attention right now, and why?”
----
-
-## Folder Structure
-
-- `excel/` – Early logic tables and “Next Best Action” mapping
-- `sql` – SQL views and validation queries
-- `images/` – Power BI dashboard screenshots used in this README
-- `dashboard/` – Power BI report file
-- `README.md` – Project overview, visuals, insights, and next steps
-
-(Adjust folder names if yours differ. The structure above is the intention.)
 
 ---
 
 ## Reflection
 
-This project was about building something real — not just another demo dashboard.  
-I started with messy customer data, cleaned and organized it in Excel, moved the logic into SQL so it could scale, and finished with a Power BI dashboard that helps make sense of customer health and engagement.  
+This project was built to simulate real-world retention analytics used in CS Ops.  
+Starting with messy data, I cleaned and organized it in Excel, rebuilt it in SQL for scale, and visualized it in Power BI for decision-making.  
 
-It pushed me to connect the technical work to actual business value — figuring out what metrics matter, how to structure the data, and how to show it in a way that drives action.  
-
-More than anything, it made me think like a CS Ops analyst: turning data into decisions, not just charts.
+It reinforced three key skills:
+- Building structured logic that scales from Excel → SQL → Power BI  
+- Designing DAX measures that turn data into insight, not just charts  
+- Thinking like a CS Ops analyst — balancing data accuracy with business context  
 
 ---
 
@@ -244,13 +229,12 @@ More than anything, it made me think like a CS Ops analyst: turning data into de
 **Aaron Zeug**  
 Customer Experience & Reporting Specialist  
 Focused on data analytics, retention strategy, and building repeatable CS Ops workflows.  
-GitHub: https://github.com/Gray135  
-LinkedIn: https://linkedin.com/in/aaronzeug
+[GitHub](https://github.com/Gray135) • [LinkedIn](https://linkedin.com/in/aaronzeug)
 
 ---
 
 ## Disclaimer
 
-All data is simulated and for portfolio/demo purposes only.  
+All data is simulated and for demonstration only.  
 Nothing in this repo reflects real customer behavior from any employer.  
-This work is meant to demonstrate workflow, logic design, and dashboard build-out.
+This project is for showcasing workflow, logic design, and dashboard development.
