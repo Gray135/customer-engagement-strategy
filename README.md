@@ -2,7 +2,7 @@
 - **Start here:** Scroll to the [Dashboard Preview](#dashboard-preview) to see the Power BI visuals.
 - **[Excel prototype](excel/):** Early exploration of customer engagement patterns and the “Next Best Action” framework, illustrated through screenshots.
 - **[SQL views](sql/):** Scalable data preparation layer for BI, built to mirror Excel logic and feed Power BI.
-- **[Access the Dashboard](dashboard/customer_engagement_strategy.pbix):** click the file in GitHub, then click "Raw" to download
+- **[Access the Dashboard](dashboard/customer_engagement_dashboard.pbix):** click the file in GitHub, then click "Raw" to download
 - **Quick skim:** This README explains the business goal, visuals, and insights.
 
 ---
